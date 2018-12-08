@@ -19,7 +19,6 @@
         </div>
 
 
-
         <div>
             <ul class="nav navbar-header navbar-right topmenu">
                 <%if (session.getAttribute("me.login") == null) {%>
