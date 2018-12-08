@@ -1,0 +1,56 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<%  if (request.getParameter("logoff") != null) {
+        session.removeAttribute("me.id");
+        session.removeAttribute("me.name");
+        session.removeAttribute("me.login");
+        session.removeAttribute("me.passwordHash");
+        response.sendRedirect(request.getContextPath() + "/home.jsp");
+    }
+%>
+<nav class="navbar navbar-light bg-light ">
+    <div class="container">
+        <div class="navbar-header">
+
+        </div>
+
+
+
+        <div>
+            <ul class="nav navbar-header navbar-right topmenu">
+                <%if (session.getAttribute("me.login") == null) {%>
+                <li> <a class="topmenu" href="telalogin.jsp">Login</a> </li>
+                <li> <a class="topmenu" href="cadastro.jsp">Cadastrar</a> </li>
+                    <%} else {%>
+                <li> <form>
+                        Bem vindo, <%=session.getAttribute("me.name")%>
+                        <input class="btn btn-alert btn-sm" type="submit" name="logoff" value="Logoff"/>
+                    </form> </li>
+                    <%}%>
+
+            </ul>
+
+        </div>
+    </div>
+
+</nav>
+<nav class="navbar navbar-light bg-light ">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="home.jsp"> <img src="img/spy.png" width="50"/> </a>
+        </div>
+
+
+
+        <div>
+            <ul class="nav navbar-header navbar-right">
+                <li> <a href="home.jsp">Home</a> </li>
+                <li> <a href="cursos.jsp">Cursos</a> </li>
+                <%if (session.getAttribute("me.login") != null) {%>
+                <li> <a href="usuario.jsp">Usuario</a> </li>
+                        <%}%>
+            </ul>
+        </div>
+    </div>
+
+</nav>

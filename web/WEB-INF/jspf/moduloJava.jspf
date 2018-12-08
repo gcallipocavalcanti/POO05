@@ -1,0 +1,12 @@
+<section class="task-menu-sections">
+    <h2 class="task-menu-sections-title">
+        Aulas
+    </h2>
+    <select class="task-menu-sections-select" onchange="location.href = '../../cursos/java/' + this.value + '.jsp';">
+
+        <option  >Escolha um modulo </option>
+        <option value="1" >Introdução </option>
+        <option value="6" >Primeiros programas</option>
+
+    </select>
+</section>

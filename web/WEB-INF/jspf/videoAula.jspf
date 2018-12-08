@@ -1,0 +1,5 @@
+<div class="card" >
+    <div class="embed-responsive embed-responsive-21by9">
+        <iframe class="embed-responsive-item" src=<%=url%> frameborder="0" gesture="media" allowfullscreen></iframe>
+    </div>
+</div>
